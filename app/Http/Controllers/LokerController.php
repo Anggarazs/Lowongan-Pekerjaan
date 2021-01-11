@@ -17,8 +17,7 @@ class LokerController extends Controller
     public function index()
     {
         $loker = loker::orderBy('id','asc')->paginate(5);
-        return view('lowongan_pekerjaan.detail',compact('loker'))
-                ->with('i',(request()->input('page',1) -1)*5);
+        return view('lowongan_pekerjaan.l',compact('loker'));
     }
 
     /**
@@ -54,8 +53,8 @@ class LokerController extends Controller
 
 
         
-        return redirect()->route('loker.index')
-                         ->with('success','Data berhasil ditambahkan');
+        return view('lowongan_pekerjaan.detail', compact('loker'));
+                        
     }
 
     /**
@@ -64,11 +63,11 @@ class LokerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($post)
     {
-        $loker = loker::find($id);
+        $loker = loker::find($post);
 
-        return view('loker.detail-profile', compact('loker'));
+        return view('lowongan_pekerjaan.detail', compact('post'));
     }
 
     /**

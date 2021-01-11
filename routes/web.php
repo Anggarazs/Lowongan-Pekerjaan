@@ -34,6 +34,8 @@ Route::get('list_lowongan', function () {
     return view('list_loker.list_lowongan');
 });
 
+Route::get('list_lowongan',[lokerController::class, 'index']);
+
 Route::resource('loker', lokerController::class);
 
 require __DIR__.'/auth.php';

@@ -1,8 +1,8 @@
-<x-app-layout>
+<x-app-layout>      
 <div class="card">
     <div class="card-header">
     </div>
-    <div class="card-content">
+    <div class="card-content"> 
     <div class="card-body">
         <form method="post" action="{{route('loker.store')}}" class="form form-vertical">
             @csrf
