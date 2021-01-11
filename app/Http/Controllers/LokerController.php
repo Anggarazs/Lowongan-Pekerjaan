@@ -16,8 +16,8 @@ class LokerController extends Controller
 
     public function index()
     {
-        $loker = loker::orderBy('id','asc')->paginate(5);
-        return view('lowongan_pekerjaan.l',compact('loker'));
+        $listloker = loker::orderBy('id','asc')->get();
+        return view('list_loker.list_lowongan',compact('listloker'));
     }
 
     /**

@@ -1,41 +1,25 @@
 <x-app-layout>
 <section id="basic-modals">
+    @foreach ($listloker as $loker)
     <div class="row">        
         <div class="col-md-12 col-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">
-                        {{-- {{$loker->nama_perusahaan}} --}}dnsfjsdfbjkbfkhsbdfhsefsk
-                    </h4>
+                        {{$loker->nama_perusahaan}}
+                    </h4><hr>
                 </div>
                 <div class="card-body">
-                    <img src="/open-iconic/svg/basket.svg">
+                    Bidang  : {{$loker->bidang}}<br>
+                    Berlaku : {{$loker->berlaku}} sampai {{$loker->kadaluarsa}} <br><br>
                     <!-- Button trigger for extra large -->
                     <button type="button" class="btn btn-outline-primary block" data-toggle="modal" data-target="#xlarge">
-                        Extra Large Modal
+                        Detail
                     </button>
                 </div>   
             </div>
         </div>
     </div>
-
-    <div class="row">        
-        <div class="col-md-12 col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">
-                        {{-- {{$loker->nama_perusahaan}} --}}dnsfjsdfbjkbfkhsbdfhsefsk
-                    </h4>
-                </div>
-                <div class="card-body">
-                    <img src="/open-iconic/svg/basket.svg">
-                    <!-- Button trigger for extra large -->
-                    <button type="button" class="btn btn-outline-primary block" data-toggle="modal" data-target="#xlarge">
-                        Extra Large Modal
-                    </button>
-                </div>   
-            </div>
-        </div>
-    </div>
+    @endforeach
 </section> 
 </x-app-layout>
