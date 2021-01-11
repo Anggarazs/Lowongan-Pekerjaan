@@ -30,7 +30,11 @@ Route::get('detail', function () {
     return view('lowongan_pekerjaan.detail');
 });
 
-Route::get('list_lowongan', function () {
+Route::get('tambahloker', function () {
+    return view('pasang_loker.tambahloker');
+});
+
+Route::get('/list_loker', function () {
     return view('list_loker.list_lowongan');
 });
 

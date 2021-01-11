@@ -11,7 +11,7 @@
 
         <li class='sidebar-title'>Lowongan Pekerjaan</li>
         <li class="sidebar-item  ">
-            <a href="form-layout.html" class='sidebar-link'>
+            <a href="{{url("list_lowongan")}}" class='sidebar-link'>
                 <i data-feather="layout" width="20"></i> 
                 <span>Daftar Lowongan</span>
             </a>
@@ -20,7 +20,7 @@
 
         <li class='sidebar-title'>Profil Pencari Kerja</li>
         <li class="sidebar-item  has-sub">
-            <a href="#" class='sidebar-link'>
+            <a href="{{url("biodata")}}" class='sidebar-link'>
                 <i data-feather="triangle" width="20"></i> 
                 <span>Pencari Kerja</span>
             </a>
@@ -41,7 +41,7 @@
     
     
         <li class="sidebar-item">
-            <a href="index.html" class='sidebar-link'>
+            <a href="{{route("loker.create")}}" class='sidebar-link'>
                 <i data-feather="home" width="20"></i> 
                 <span>Tambah Loker</span>
             </a>
@@ -50,7 +50,7 @@
 
         <li class='sidebar-title'>Info</li>
         <li class="sidebar-item  ">
-            <a href="form-layout.html" class='sidebar-link'>
+            <a href="{{url("info")}}" class='sidebar-link'>
                 <i data-feather="layout" width="20"></i> 
                 <span>Berita Informasi Terkini</span>
             </a>
