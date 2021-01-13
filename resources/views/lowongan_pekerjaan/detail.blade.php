@@ -1,9 +1,11 @@
 <x-app-layout>
+    <link href="{{url("css/button.css")}}" rel="stylesheet">
     <div class="col-lg-6 col-lg-12">
         <div class="card">
             <div class="card-content">
                 <img class="card-img-top img-fluid" src="{{asset('images/samples/1.jpg')}}"
                     alt="Card image cap" />
+                    {{-- <form method="post" action="{{route('loker.edit',$loker->id)}}"> --}}
                 <div class="card-body">
                     <h4 class="card-title">NAMA PERUSAHAAN</h4>
                     <p class="card-text">
@@ -43,6 +45,8 @@
                                 {{$loker->no_telp}}
                             </li>
                 </div>
+                <a href="{{route('loker.edit',$loker->id)}}" class="btn info"><span>EDIT</span></a>
+                </form>
             </div>
         </div>
     </div>

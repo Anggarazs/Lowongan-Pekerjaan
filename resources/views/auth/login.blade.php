@@ -1,7 +1,16 @@
 <x-guest-layout>
+<html>
+    <head>
+    {{-- <link href="{{url("css/login.css")}}" rel="stylesheet">
+    <link href="{{url("css/bootstrap.css")}}" rel="stylesheet"> --}}
+    </head>
+    <body>
+        {{-- <video autoplay muted loop id="myVideo">
+            <source src="{{url("video/videoplayback.mp4")}}" type="video/mp4">
+        </video> --}}
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
+            <a href="{{route("welcome")}}">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
         </x-slot>
@@ -57,4 +66,7 @@
             </div>
         </form>
     </x-auth-card>
+
+</body>
+</html>
 </x-guest-layout>

@@ -12,10 +12,9 @@
                 <div class="card-body">
                     Bidang  : {{$loker->bidang}}<br>
                     Berlaku : {{$loker->berlaku}} sampai {{$loker->kadaluarsa}} <br><br>
-                    <!-- Button trigger for extra large -->
-                    <button type="button" class="btn btn-outline-primary block" data-toggle="modal" data-target="#xlarge">
+                    <a href="{{route('detail_pencari',$loker->id)}}" type="button" class="btn btn-outline-primary block" data-toggle="modal" data-target="#xlarge">
                         Detail
-                    </button>
+                    </a>
                 </div>   
             </div>
         </div>

@@ -5,9 +5,11 @@
         </h2>
     </x-slot>    
 <div class="main-content container-fluid">
+    <a href="/logout">asu</a>
     <div class="page-title">
         <h3>E-Vacancy Balikpapan</h3>
-        <p class="text-subtitle text-muted">Selamat Datang</p>
+        
+        <p class="text-subtitle text-muted"> Selamat Datang {{ Auth::user()->name }}</p>
     </div>
     <section class="section">
         <div class="row mb-2">

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UserPerusahaan extends Migration
+class Admin extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class UserPerusahaan extends Migration
      */
     public function up()
     {
-        Schema::create('user_perusahaan', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('id_perusahaan')->unsigned();
-            $table->timestamps();
-            $table->foreign('id_perusahaan')->references('id')->on('users')->onDelete('cascade');
-        });
+        DB::table('users')->insert(array(
+            'name' => "Anggara Azis Saputra",
+            'email' => "anggara.azis27@gmail.com",
+            'password' => Hash::make('SATE27piring'),
+            'admin' => 1
+        ));
     }
 
     /**

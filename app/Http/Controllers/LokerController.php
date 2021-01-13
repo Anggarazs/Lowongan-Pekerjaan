@@ -63,11 +63,11 @@ class LokerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($post)
+    public function show($id)
     {
-        $loker = loker::find($post);
+        $loker = loker::find($id);
 
-        return view('lowongan_pekerjaan.detail', compact('post'));
+        return view('lowongan_pekerjaan.detail', compact('loker'));
     }
 
     /**
@@ -80,7 +80,7 @@ class LokerController extends Controller
     {
         $loker = loker::find($id);
 
-        return view('penjual.editProduk', compact('loker'));
+        return view('pasang_loker.editloker', compact('loker'));
     }
 
     /**
@@ -92,25 +92,24 @@ class LokerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'nama'=>'required',
-            'harga' => 'required',
-            'stok'=>'required',
-            'penjual_id' => 'required',
-            'foto' => 'required'
-        ]);
-        $loker = loker::find($id);
-        $loker->nama = $request->get('nama');
-        $loker->harga = $request->get('harga');
-        $loker->stok = $request->get('stok');
-        $loker->penjual_id = $request->get('penjual_id');
-        $loker->foto = $request->get('foto');
+   
+        $loker =loker::find($id);
+        $loker->nama_perusahaan = $request->get('nama_perusahaan');
+        $loker->bidang = $request->get('bidang');
+        $loker->bagian = $request->get('bagian');
+        $loker->no_perusahaan = $request->get('no_perusahaan');
+        $loker->berlaku = $request->get('berlaku');
+        $loker->kadaluarsa = $request->get('kadaluarsa');
+        $loker->lokasi = $request->get('lokasi');
+        $loker->email = $request->get('email');
+        $loker->no_telp = $request->get('no_telp');
         $loker->save();
 
-        return redirect()->route('loker.index')
+        return redirect()->route('loker.show',$loker->id)
                          ->with('success', 'Data berhasil diupdate');
     }
 
+      
     /**
      * Remove the specified resource from storage.
      *
